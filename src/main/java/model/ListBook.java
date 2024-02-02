@@ -11,27 +11,27 @@ import javax.persistence.Table;
  * CIS175 - Spring 2024
  * Jan 31, 2024
  */
-@Entity
-@Table(name="authors")
+@Entity	//creates a new table
+@Table(name="books")		//names the table
 public class ListBook {
-	@Id
-	@GeneratedValue
-	@Column(name="ID")
-	private int id;
-	@Column(name="AUTHOR")
-	private String author;
-	@Column(name="BOOK")
-	private String book;
+	@Id							//Marks as primary key field
+	@GeneratedValue					//Auto generates the primary key in the database
+	@Column(name="ID")			//Column Heading Name
+	private int id;					//field variable
+	@Column(name="AUTHOR")		//Column Heading Name
+	private String author;			//field variable
+	@Column(name="BOOK")		//Column Heading Name
+	private String book;			//field variable
 //	@Column(name="GENRE")
 //	private String genre;
 //	@Column(name="RATING")
 //	private int rating;
 	
-	public ListBook() {
+	public ListBook() {			//empty constructor
 		super();
 	}
 	
-	public ListBook(String author, String book) {
+	public ListBook(String author, String book) {			//accepts arguments constructor
 		super();
 		this.author = author;
 		this.book = book;
@@ -39,11 +39,13 @@ public class ListBook {
 //		this.rating = rating;
 	}
 	
-	public String returnBookDetails() {
+	public String returnBookDetails() {					//returns string of book details
 		return this.book + ": By " + this.author;
 //				+ ", Genre: " + genre + ", Rating: " + rating;
 	}
 
+	
+	//Getters and Setters
 	public int getId() {
 		return id;
 	}
